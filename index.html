@@ -65,6 +65,12 @@
         .bigger-font {
             font-size: 20px; /* Adjust the font size as needed */
         }
+        .bold-text {
+            font-weight: bold;
+        }
+        .left-align {
+            text-align: left;
+        }
       </style>
     </head>
     
@@ -97,9 +103,6 @@
             Indian Institute of Technology Delhi
         <!-- </a> -->
     </div>
-    <div class="affiliations2">
-        *equal contribution
-    </div>
     
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
@@ -108,6 +111,12 @@
                     <a href="https://arxiv.org/abs/">
                         <img src="assets/paper_front.png" height="80px"><br>
                         <h4><strong>Paper</strong></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://arxiv.org/abs/">
+                        <img src="assets/supplementary_front.png" height="80px"><br>
+                        <h4><strong>Supplementary</strong></h4>
                     </a>
                 </li>
                 <li>
@@ -133,46 +142,53 @@
     <div class="flex-container margin-top-1em margin-bottom-1em">
         <figure>
         <img src="./assets/aarch_diagram.png">
-        <!-- <figcaption>Table 1: NYUv2 Dataset </figcaption> -->
+        <figcaption class="left-align"><span class="bold-text">Architecture Diagram: </span>The latent representations of the input image undergo a diffusion process, which is conditioned by our proposed CIDE module. Within the CIDE module, the input image is fed through the frozen ViT model. From this, a linear combination of learnable embeddings is computed, which are subsequently transformed to generate a 768-dimensional semantic context embedding. This embedding is utilized to condition the diffusion backbone. Subsequently, hierarchical feature maps are extracted from U-Net's decoder which are upsampled and processed through a depth regressor to generate the depth map.</figcaption>
         </figure>
     </div>  
+<!-- </div>
+<div class="container"> -->
+    
+
     <p class="section">State-of-the-art results on Monocular Depth Estimation</p>
     Our model achieves state-of-the-art results on the indoor dataset NYUv2 and outdoor dataset KITTI for metric depth estimation using monocular images.
     <!-- <div class="flex-container margin-top-1em margin-bottom-1em"> -->
     <div class="flex-container margin-top-1em margin-bottom-1em">
-        <figure>
+        <figure class="less_width">
           <img src="./assets/table_nyu.png">
           <figcaption>Table 1: NYUv2 Dataset </figcaption>
         </figure>
     </div>
     
     <div class="flex-container margin-top-1em margin-bottom-1em">
-        <figure>
+        <figure class="less_width">
           <img src="./assets/table_kitti.png">
           <figcaption>Table 2: KITTI Dataset</figcaption>
         </figure>
     </div>
     <!-- </div> -->
     <p class="section">Generalization and Zero Shot Transfer</p>
+    Our model generalizes well to other datasets and achieves state-of-the-art results for zero-shot transfer on various datasets. Our model which is trained only on NYUv2 dataset is tested on the following datasets: Sun-RGBD, iBims1, DIODE, and HyperSim. Achieving SOTA results compared to all previous methods that claim to generalize on unseen data(ex: ZoeDepth, VPD).
     <div class="flex-container margin-top-1em margin-bottom-1em">
         <figure class="fullwidth">
           <img src="./assets/table_zeroshot.png">
           <figcaption></figcaption>
         </figure>
-      </div>
+    </div>
+    <p class="section text-center">Zero-Shot Qualitative Results</p>
+    <div class="flex-container margin-top-1em margin-bottom-1em">
+        <figure class="less_width">
+          <img src="./assets/teaser.png">
+          <figcaption  class="left-align"><span class="bold-text">Qualitative results</span> across four different datasets, demonstrating the zero-shot performance of our model trained only on the NYUv2 dataset. Corresponding quantitative results are presented in above table. The first column displays RGB images, the second column depicts ground truth depth, and the third column showcases our model's predicted depths. Additional images for each dataset are available in the Supplementary Material.</figcaption>
+        </figure>
+    </div>
 
-      <p class="section">BibTeX</p>
+      <p class="section">BibTeX (Citation)</p>
       <pre class="selectable"><code>@inproceedings{ecodepth....... TODO after submitting to arxiv.
+        TODO
+        TODO
+        TODO
+        TODO
       }</code></pre>
-      
-      <!-- <section class="section pt-0" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <h2 class="section">Citation</h2>
-          <pre class="selectable"><code>todo 
-            after arxiv 
-      }</code></pre>
-        </div>
-      </section> -->
     
 </div>
 </body>
