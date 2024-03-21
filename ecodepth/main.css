@@ -42,9 +42,6 @@ p.author {
 	margin-right: 40px;
 } */
 
-.deepmind-logo {
-  height: 1.5em;
-}
 
 .research-logo {
   height: 1.2em;
@@ -108,75 +105,6 @@ a:hover {
     /* Optionally, you can add more styles here */
 }
 
-.text-to-3d-examples {
-  display: flex;
-  justify-content: space-between;
-	margin-bottom: 10px;
-}
-
-.text-to-3d-example {
-  width: calc(50% - 5px);
-	position: relative;
-}
-
-.teaser-video {
-	width: 100%;
-}
-
-.text-to-3d-caption {
-	opacity: 0.5;
-	color: white;
-	right: 10px;
-	bottom: 5px;
-	position: absolute;
-	text-align: right;
-	font-size: 80%;
-}
-
-.material-symbols-outlined {
-	cursor: pointer;
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 0,
-  'opsz' 40
-}
-
-.viewers {
-  display: flex;
-  justify-content: space-between;
-}
-
-.viewer-3d {
-	position: relative;
-}
-
-.viewer-3d-label {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	opacity: 0.2;
-	text-shadow: 1px 1px 2px rgb(0 0 0 / 20%)
-}
-
-.viewer-3d-caption {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	bottom: 10px;
-	opacity: 0.5;
-}
-
-.viewer-3d-container {
-  width: calc(50% - 5px);
-}
-
-.viewer-3d:hover {
-  cursor: pointer;
-}
 
 .flex-container {
 	display: flex;
@@ -196,9 +124,6 @@ figure {
 	position: relative;
 }
 
-.table-flow-pretrain {
-	width: calc(60.625% - 5px);
-}
 .nyu-table {
 	width: calc(10.625% - 5px);
 }
@@ -206,21 +131,10 @@ figure {
 	width: calc(60.625% - 5px);
 }
 
-.table-flow-finetune {
-	width: calc(39.375% - 5px);
-}
 
 figcaption {
 	text-align: center;
 	margin-top: 0.25em;
-}
-
-.table-flow-dataset-ablation {
-	width: 56%;
-}
-
-.table-depth-dataset-ablation {
-	width: 44%;
 }
 
 .margin-top-1em {
@@ -229,24 +143,6 @@ figcaption {
 
 .margin-bottom-1em {
 	margin-bottom: 1em;
-}
-
-.table-refine {
-	margin-top: 1em;
-}
-
-.table-refine > .text {
-	/* width: 50%; */
-	/* padding-top: 1em; */
-}
-
-.table-refine > .table {
-	width: 50%;
-}
-
-.table-refine > .table > figure {
-	margin-left: 0;
-	margin-right: 0;
 }
 
 pre {
