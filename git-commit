@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -rf index.html*
 
 # default commit message
 file_to_stage="."
