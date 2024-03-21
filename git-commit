@@ -20,4 +20,5 @@ git add "$file_to_stage"
 echo command: git commit -m "$commit_msg"
 git commit -m "$commit_msg"
 # Push to the main branch on GitHub (assuming 'origin' points to your GitHub repository)
-git push origin main
+echo not pushing to GitHub
+# git push origin main
