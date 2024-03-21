@@ -1,4 +1,4 @@
 # ECoDepth - Effective Conditioning of Diffusion Models for Monocular Depth Estimation
 
-### [Link to Project Page](ecodepth-iitd.github)
+### [Link to Project Page](https://ecodepth-iitd.github.io)
 This is the code for Project page of our CVPR'2024 paper **ECoDepth - Effective Conditioning of Diffusion Models for Monocular Depth Estimation**.
