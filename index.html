@@ -82,6 +82,9 @@
         .font-size-author-names {
             font-size: 21px;
         }
+        .center-align {
+            text-align: center;
+        }
       </style>
     </head>
     
@@ -145,21 +148,55 @@
             </ul>
         </div>
     </div>
-    <p class="section">Abstract</p>
+    <p class="section center">Abstract</p>
     <p>
         In the absence of parallax cues, a learning based single image depth estimation (SIDE) model relies heavily on shading and contextual cues in the image. While this simplicity is attractive, it is necessary to train such models on large and varied datasets, which are difficult to capture. It has been shown that using embeddings from pretrained foundational models, such as CLIP, improves zero shot transfer in several applications. Taking inspiration from this, in our paper we explore the use of global image priors generated from a pre-trained ViT model to provide more detailed contextual information. We argue that the embedding vector from a ViT model, pre-trained on a large dataset, captures greater relevant information for SIDE than the usual route of generating pseudo image captions, followed by CLIP based text embeddings. Based on the idea, we propose a new SIDE model using a diffusion backbone conditioned on ViT embeddings. Our proposed design establishes a new state-of-the-art (SOTA) for SIDE on NYU Depth v2 dataset, achieving Abs Rel error of 0.059(14% improvement) compared to 0.069 by the current SOTA (VPD). And on KITTI dataset, achieving SqRel error of 0.139 (2% improvement) compared to 0.142 by the current SOTA (GEDepth). For zero shot transfer with a model trained on NYU Depth v2, we report mean relative improvement of (20%, 23%, 81%, 25%) over NeWCRF on (Sun-RGBD, iBims1, DIODE, HyperSim) datasets, compared to (16%, 18%, 45%, 9%) by ZoEDepth.
     </p>
     
+
     <div class="flex-container margin-top-1em margin-bottom-1em">
         <figure>
         <img src="./assets/aarch_diagram.png">
         <figcaption class="left-align"><span class="bold-text">Architecture Diagram: </span>The latent representations of the input image undergo a diffusion process, which is conditioned by our proposed CIDE module. Within the CIDE module, the input image is fed through the frozen ViT model. From this, a linear combination of learnable embeddings is computed, which are subsequently transformed to generate a 768-dimensional semantic context embedding. This embedding is utilized to condition the diffusion backbone. Subsequently, hierarchical feature maps are extracted from U-Net's decoder which are upsampled and processed through a depth regressor to generate the depth map.</figcaption>
         </figure>
     </div>  
-<!-- </div>
-<div class="container"> -->
-    
 
+
+
+    <p class="section center-align">Demo ZeroShot Performance on Video</p>
+    <div class="flex-container margin-top-1em margin-bottom-1em">
+        <figure class="center-align">
+            <div id="video-container">
+                <iframe id="video-iframe" src="./assets/demo_zeroshot_video.mp4" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <figcaption class="left-align">
+                <span class="bold-text">Demo Video: </span>
+                Our model is able to predict accurate depth maps from a single RGB image. 
+                The video showcases the qualitative results of our model on various datasets.
+            </figcaption>
+        </figure>
+    </div>
+    <script>
+        window.onload = function() {
+            var videoIframe = document.getElementById('video-iframe');
+            var videoContainer = document.getElementById('video-container');
+            
+            videoIframe.onload = function() {
+                // var aspectRatio = this.width / this.height;
+                var aspectRatio = 1562/720;
+                var containerWidth = videoContainer.offsetWidth;
+                var containerHeight = containerWidth / aspectRatio;
+                videoIframe.style.width = containerWidth + 'px';
+                videoIframe.style.height = containerHeight + 'px';
+            }
+        };
+    </script>
+
+    
     <p class="section">State-of-the-art results on Monocular Depth Estimation</p>
     Our model achieves state-of-the-art results on the indoor dataset NYUv2 and outdoor dataset KITTI for metric depth estimation using monocular images.
     <!-- <div class="flex-container margin-top-1em margin-bottom-1em"> -->
