@@ -8,11 +8,14 @@ This is the code for **Project page** of our CVPR'2024 paper **ECoDepth - Effect
 
 ### BibTeX (Citation)
 If you find ECoDepth useful, please cite using: 
-```
-@inproceedings{ecodepth....... TODO after submitting to arxiv.
-        .
-        .
-        .
-        .
-        .
+
+``` bibtex
+@misc{patni2024ecodepth,
+      title={ECoDepth: Effective Conditioning of Diffusion Models for Monocular Depth Estimation}, 
+      author={Suraj Patni and Aradhye Agarwal and Chetan Arora},
+      year={2024},
+      eprint={2403.18807},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
